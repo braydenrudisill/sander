@@ -1,3 +1,5 @@
+"""Make sure you run this from the annin_ar4 directory with `uv run ../xacro_to_urdf.py`"""
+
 import xacrodoc
 
 xacro_file = "ar.urdf.xacro"
