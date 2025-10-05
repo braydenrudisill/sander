@@ -11,12 +11,8 @@ def simple_waypoints():
         (1.0, 1.0, 1.0, 1.0, 1.0, 1.0),
     ]
 
-def test_plan_simple(simple_waypoints):
-    plan = ray.get(plan_motion.remote(simple_waypoints, 0.1))
+def test_plan(simple_waypoints):
+    plan = ray.get(plan_motion.remote(simple_waypoints))
     assert len(plan) > 2
     
-def test_plan_huge_step(simple_waypoints):
-    plan = ray.get(plan_motion.remote(simple_waypoints, 1000.0))
-    assert len(plan) == 2
-
     
